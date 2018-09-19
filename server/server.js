@@ -18,6 +18,18 @@ io.on('connection', (socket)=>{
     socket.on('disconnect', (socket)=>{
         console.log('Client disconnected ', socket.id);
     });
+
+    socket.emit('newMessage', {
+        from: "steve@exmaple.com",
+        text: "what up"
+    });
+
+
+    socket.on('createMessage', (message)=>{
+        console.log('Create message', message);
+    });
+
+
 });
 
 
