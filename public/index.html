@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Chat</title>
 </head>
 <body>
     <p>Welcome to the chat app</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('connect', ()=>{
+            console.log("connected to server");
+        });
+
+        socket.on('disconnect', ()=>{
+            console.log("disconencted from server");
+        });
+
+
+    </script>
 </body>
 </html>
