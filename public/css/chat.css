@@ -1,0 +1,100 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    padding:15px;
+}
+
+
+.curved-border{
+
+    font-family: consolas;
+    color:white;
+    background-color: darkslategray;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.curved-border span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:2.3em;
+
+}
+
+
+
+
+/*  Odd elements - float left */
+.container:nth-of-type(odd) {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.container:nth-of-type(odd) .flex-pos:nth-of-type(1){
+    order: 1;
+}
+
+.container:nth-of-type(odd) .avatar{
+    /* (content:url(../images/kyle.png); */
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+}
+
+.container:nth-of-type(odd) .chat-text{
+    text-align: right;
+    padding-right:15px;
+    font-weight: normal;
+}
+
+/*  Even elements  - float right*/
+.container:nth-of-type(even) {
+    border: 2px solid #dedede;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.container:nth-of-type(even) .avatar{
+    /* content:url(../images/stan.png); */
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+}
+
+.container:nth-of-type(even) .chat-text{
+    padding-left:15px;
+}
+
+textarea {
+    resize: none;
+}
+
+#messages{
+    width:600px;
+    height:500px;
+    display:block;
+    max-height:500px;
+    overflow-y:auto;
+    
+}
+
+#messages-container{
+    border-style: solid;
+    border-color:  darkslategray;
+    width:618px;
+    border-radius: 19px;
+    padding:5px
+}
+
+#message{
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
+

@@ -3,6 +3,9 @@ const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
 
+const {generateMessage} = require('./utils/message');
+const {addAvatar, removeAvatar, charAvatars, connectedClients} = require('./utils/avatar');
+
 const publicPath = path.join(__dirname, "../public");
 const port = process.env.PORT || 3000;
 
@@ -12,35 +15,70 @@ var io = socketIO(server);
 
 app.use(express.static(publicPath));
 
+//var connectedClients = {};
+//var charAvatars = ['stan', 'kyle', 'wendy', 'craig', 'butters', 'kenny', 'eric'];
+
 io.on('connection', (socket)=>{
-    console.log('New user connected ', socket.id);
+    var getRefToSockID = socket.id;
+    var avatar;
+    var selectAvatar = false;
 
-    socket.on('disconnect', (socket)=>{
-        console.log('Client disconnected ', socket.id);
+    socket.emit('avatarMessage', {
+        chars : charAvatars
+    })
+
+    socket.on('avatarSelected', (avatar)=>{
+        //console.log("Client selected", avatar.name);       
+        addAvatar(socket.id, avatar.name)
+            .then((name)=>{
+                avatar = name;
+                selectAvatar = true;
+                console.log(connectedClients[getRefToSockID].avatar);
+                socket.emit('adminMessage',generateMessage('Admin', 'Your selected avatar is '+connectedClients[getRefToSockID].avatar + '.  You can begin chatting now.'));
+
+            }).catch((err)=>{
+                console.log("error occured");
+            })
     });
 
-    socket.emit('newMessage', {
-        from: "steve@exmaple.com",
-        text: "what up"
+    //socket.emit('adminMessage', generateMessage('Admin', 'Welcome to the chat app!'))
+
+    socket.broadcast.emit('adminMessage',generateMessage('Admin', ' A new User has joined'));
+
+    socket.on('createMessage', (message, callback)=>{
+        if(selectAvatar){
+            io.emit('newMessage', generateMessage(message.from, message.text, connectedClients[socket.id].avatar));
+        }
+        callback("message processed");
+        
     });
 
+    socket.on('disconnect', ()=>{
+        if(connectedClients[getRefToSockID]){
+            removeAvatar(getRefToSockID, connectedClients[getRefToSockID].avatar,()=>{
+                console.log(connectedClients[getRefToSockID].avatar, "added back into pool")
+            });
+            delete connectedClients[getRefToSockID];
+        }
 
-    socket.on('createMessage', (message)=>{
-        console.log('Create message', message);
-        io.emit('newMEssage', {
-            from: message.from,
-            text: message.text,
-            createdAt : new Date().getTime()
-        })
     });
+
 
 
 });
-
-
 
 server.listen(port ,()=>{
     console.log(`Server runing on port ${port}`);
 })
 
-//finish module 106 in 09 Real time ....., stopped at 14.11
+module.exports = {
+    io, 
+    app,
+    server,
+    port
+}
+
+
+//lesson 113 sockets -13.50
+
+

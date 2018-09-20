@@ -2,12 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
     <title>Chat</title>
 </head>
 <body>
-    <p>Welcome to the chat app</p>
+    <div class="curved-border" style="width:600px">
+        <span>Welcome to the chat app</span>
+    </div>
 
+    <div id="select-avatar" style="text-align-last: center;width:600px">
+        <span style="font-size:1.5em">To begin select an avatar by clicking it!</span><br>
+    </div>
+
+    <br/>
+    <div id="messages-container" style="display:none">
+        <div id="messages"></div>
+    </div>
+
+    <br/>
+    <div id="message-form" style="display:none">
+        <textarea type="text" id="message" placeholder="Type message and press Enter to send" rows="8" cols="55" resize="none"></textarea>
+    </div>
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/index.js"></script>
 </body>
