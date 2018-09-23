@@ -12,7 +12,7 @@ describe('generateMessage function',()=>{
 
         expect(returnMessage.from).toBe(mFrom);
         expect(returnMessage.text).toBe(mText);
-        expect(returnMessage.createdAt).toBeA('number');
+        expect(returnMessage.createdAt).toBeA('string');
 
 
     })

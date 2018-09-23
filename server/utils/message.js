@@ -1,12 +1,14 @@
-var generateMessage = (from, text, avatar)=>{
+moment = require('moment');
+
+var generateMessage = (from, text, avatar, socketId)=>{
     if(!avatar){
         avatar="";
     }
     return {
-        from : from,
-        text : text,
-        avatar : avatar,
-        createdAt : new Date().getTime()
+        from, 
+        text, 
+        avatar, 
+        createdAt : new moment().format('DD MMM YYYY hh:mma')
     }
 }
 

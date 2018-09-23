@@ -3,14 +3,19 @@ body{
     padding:15px;
 }
 
+#container {
+    height: 700px;
+    width: 1300px;
+}
 
-.curved-border{
-
+.welcome{
+    width:1300px;
     font-family: consolas;
     color:white;
     background-color: darkslategray;
     text-align: center;
     border-radius: 10px;
+    font-size:2.5em;
 }
 
 .curved-border span{
@@ -19,36 +24,48 @@ body{
 
 }
 
+.add-borders{
+    border-style: solid;
+    border-color:  darkslategray;
+    border-radius: 19px;
+    
+}
+
+.set-width-padding{
+    width:618px;
+    padding:5px
+}
+
 
 
 
 /*  Odd elements - float left */
-.container:nth-of-type(odd) {
+.chat-element:nth-of-type(odd) {
     border: 2px solid #dedede;
-    background-color: #f1f1f1;
+    background-color: #dedede;
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
 }
 
-.container:nth-of-type(odd) .flex-pos:nth-of-type(1){
+.chat-element:nth-of-type(odd) .flex-pos:nth-of-type(1){
     order: 1;
 }
 
-.container:nth-of-type(odd) .avatar{
+.chat-element:nth-of-type(odd) .avatar{
     /* (content:url(../images/kyle.png); */
     background-repeat: no-repeat;
     background-size: 100px 100px;
 }
 
-.container:nth-of-type(odd) .chat-text{
+.chat-element:nth-of-type(odd) .chat-text{
     text-align: right;
     padding-right:15px;
     font-weight: normal;
 }
 
 /*  Even elements  - float right*/
-.container:nth-of-type(even) {
+.chat-element:nth-of-type(even) {
     border: 2px solid #dedede;
     background-color: #ddd;
     border-radius: 5px;
@@ -56,13 +73,13 @@ body{
     margin: 10px 0;
 }
 
-.container:nth-of-type(even) .avatar{
+.chat-element:nth-of-type(even) .avatar{
     /* content:url(../images/stan.png); */
     background-repeat: no-repeat;
     background-size: 100px 100px;
 }
 
-.container:nth-of-type(even) .chat-text{
+.chat-element:nth-of-type(even) .chat-text{
     padding-left:15px;
 }
 
@@ -75,22 +92,139 @@ textarea {
     height:500px;
     display:block;
     max-height:500px;
-    overflow-y:auto;
-    
+    overflow-y:auto;    
 }
 
-#messages-container{
-    border-style: solid;
-    border-color:  darkslategray;
-    width:618px;
-    border-radius: 19px;
-    padding:5px
+button,button:hover{
+    border:none;
+    color:#fff;
+    padding:10px
 }
 
-#message{
-    font-size: 1.5em;
+
+
+*{
+    box-sizing:border-box;
 }
 
+
+
+h3{
+    font-weight:600;
+    text-align:center;
+    font-size:1.5rem
+}
+button{
+    background:#265f82;
+    cursor:pointer;
+    transition:background .3s ease
+}
+button:hover{
+    background:#1F4C69
+}
+button:disabled{
+    cursor:default;
+    background:#698ea5
+}
+.centered-form{
+    display:flex;
+    align-items:center;
+    height:100vh;
+    width:100vw;
+    justify-content:center;
+    background:-moz-linear-gradient(125deg,rgba(39,107,130,1) 0,rgba(49,84,129,1) 100%);
+    background:-webkit-gradient(linear,left top,right bottom,color-stop(0,rgba(49,84,129,1)),color-stop(100%,rgba(39,107,130,1)));
+    background:-webkit-linear-gradient(125deg,rgba(39,107,130,1) 0,rgba(49,84,129,1) 100%);
+    background:-o-linear-gradient(125deg,rgba(39,107,130,1) 0,rgba(49,84,129,1) 100%);
+    background:-ms-linear-gradient(125deg,rgba(39,107,130,1) 0,rgba(49,84,129,1) 100%);
+    background:linear-gradient(325deg,rgba(39,107,130,1) 0,rgba(49,84,129,1) 100%)
+}
+.centered-form__form{
+    background:rgba(250,250,250,.9);
+    border:1px solid #e1e1e1;
+    border-radius:5px;
+    padding:0 20px;
+    margin:20px;
+    width:230px
+}
+.form-field{
+    margin:20px 0
+}
+.form-field>*{
+    width:100%
+}
+.form-field label{
+    display:block;
+    margin-bottom:7px
+}
+.form-field input,.form-field select{
+    border:1px solid #e1e1e1;
+    padding:10px
+}
+
+#user-list{
+    padding-left:15px;
+}
+
+/*  user class hover effects */
+.user{
+    background-color: #dedede;
+    margin: 0 0 5px 0;
+    border-radius:5px;
+    display:table;
+    width:200px;
+}
+
+.user:hover{
+    background-color: #265f82;
+    cursor: pointer; 
+    color:white;
+
+}
+
+.room-name{
+    padding:10px;
+    background-color: darkslategray;
+    color:white;
+    margin: 0 0 5px 0;
+    border-radius:5px;
+}
+
+.room-name:hover{
+    background-color: #265f82;
+    cursor: pointer; 
+}
+
+li{
+    list-style-position:inside;
+    padding:10px;
+    color:white
+}
+
+textarea, textarea:focus{
+    border: none;
+    outline: 0;
+}
+
+.user-input-parent{
+    padding: 15px;
+    height:110px
+}
+
+.user-input-parent .user-input{
+    resize: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 100%;
+    margin: -10px;
+}
+
+
+
+
+ 
 
 
 

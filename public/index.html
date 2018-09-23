@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-    <title>Chat</title>
+  <meta charset="utf-8">
+  <title>Join | ChatApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="/css/chat.css">
 </head>
-<body>
-    <div class="curved-border" style="width:600px">
-        <span>Welcome to the chat app</span>
-    </div>
 
-    <div id="select-avatar" style="text-align-last: center;width:600px">
-        <span style="font-size:1.5em">To begin select an avatar by clicking it!</span><br>
-    </div>
-
-    <br/>
-    <div id="messages-container" style="display:none">
-        <div id="messages"></div>
-    </div>
-
-    <br/>
-    <div id="message-form" style="display:none">
-        <textarea type="text" id="message" placeholder="Type message and press Enter to send" rows="8" cols="55" resize="none"></textarea>
-    </div>
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">
-    <script src="/js/libs/jquery-3.3.1.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/index.js"></script>
+<body class="centered-form">
+  <div class="centered-form__form">
+    <form action="/chat.html">
+      <div class="form-field">
+        <h3>Join a Chat<h3>
+      </div>
+      <div class="form-field">
+        <label>Display name</label>
+        <input type="text" name="name" autofocus/>
+      </div>
+      <div class="form-field">
+        <label>Room name</label>
+        <input type="text" name="room"/>
+      </div>
+      <div class="form-field">
+        <button>Join</button>
+      </div>
+    </form>
+  </div>
 </body>
+
 </html>

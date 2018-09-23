@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+
+
+    <title>Chat</title>
+</head>
+<body>
+    <div class="welcome">
+        <span>Welcome to the chat app</span>
+    </div>
+    <br/>
+    <div id="select-avatar" style="text-align-last: center;width:600px">
+        <span style="font-size:1.5em">To begin select an avatar by clicking it!</span><br>
+        <div id="avatars-list"></div>
+        <span id="avatars-errors"></span>
+    </div>
+
+    <div id="container" style="display:none">
+        <div>Room name : <span id="room-name"></span></div>
+        <div style="display:inline-block"> 
+            <div class="add-borders set-width-padding">
+                <div id="messages"></div>
+            </div>
+            <br/>
+            <div class="add-borders set-width-padding user-input-parent" >
+                <textarea type="text" class="user-input" id="message" placeholder="Type message and press Enter to send" resize="none"></textarea>
+            </div>     
+        </div> 
+ 
+        <div style="float:right">
+            <span>Users</span>
+            <div class="add-borders set-width-padding" style="height:300px">
+                <div id="user-list"></div>
+            </div>
+            <span>Chat Rooms</span>
+            <div class="add-borders set-width-padding" style="height:300px">
+                <div id="rooms-list"></div>
+            </div>        
+        </div>
+
+    </div>
+    
+
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/libs/deparam.js"></script>
+
+</body>
+</html>
