@@ -6,9 +6,6 @@ import RoomName from './RoomName';
 import OtherUsers from './OtherUsers';
 import OtherRooms from './OtherRooms';
 
-
-
-
 export default class ChatApp extends React.Component{    
 
     state = {

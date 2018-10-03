@@ -6,27 +6,7 @@ export default class Messages extends React.Component{
     message = React.createRef();
     
     state = {
-        messages: [
-            {
-                from : "Paul",
-                text : "this is the message 1",
-                avatar : "stan", 
-                createdAt : new moment().format('DD MMM YYYY hh:mma')
-            },
-            {
-                from : "Steve",
-                text : "this is the message 2",
-                avatar : "eric", 
-                createdAt : new moment().format('DD MMM YYYY hh:mma')
-            },
-            {
-                from : "Bruce",
-                text : "this is the message 3",
-                avatar : "butters", 
-                createdAt : new moment().format('DD MMM YYYY hh:mma')
-            }
-    
-        ], 
+        messages: [], 
         message:''
     }
 
@@ -45,9 +25,6 @@ export default class Messages extends React.Component{
                 avatar: this.props.avatar, 
                 room: this.props.myroom
             }
-
-            console.log(message);
-
             this.props.socket.emit('createMessage', message, (res)=>{
                 if(res){
                     //message was processed
@@ -65,8 +42,7 @@ export default class Messages extends React.Component{
                 return {
                     messages : previousState.messages.concat(message)
                 }                
-            })
-            
+            })            
         });
     }
 
@@ -103,9 +79,7 @@ export default class Messages extends React.Component{
                         username={this.props.username}
                         avatar={this.props.avatar}
                         value={this.state.message}
-                        onChange={this.handleChange}
-                        
-
+                        onChange={this.handleChange}                      
                 >
                 </textarea>
                 </div>

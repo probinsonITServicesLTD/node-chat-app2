@@ -17,8 +17,6 @@ var io = socketIO(server);
 // const webpack =require('webpack');
 // const webpackConfig = require('./../webpack.config');
 // const compiler = webpack(webpackConfig);
-var users = new Users();
-
 // app.use(
 //     require('webpack-dev-middleware')(compiler, {
 //         noInfo: false,
@@ -28,15 +26,13 @@ var users = new Users();
 // app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(express.static(publicPath));
-
+var users = new Users();
 
 // Normal Socket                                                         :: Using rooms
 // _____________________________________________________________________________________________________________________________________________________________
 // io.emit :  goes to all users                                          :: io.to(params.room).emit : goes to all users in room
 // socket.broadcast.emit : goes to all users except the current socket   :: socket.broadcast.to(params.room).emit : goes to all users except the current socket
 // socket.emit // goes to one user                                       :: socket.emit : its the exact same 
-
-
 
 io.on('connection', (socket)=>{
 
@@ -72,10 +68,8 @@ io.on('connection', (socket)=>{
             user.room = params.room; //change users old room to new room            
             //join new room
             socket.join(user.room);
-            io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has joined the room`) )
-            io.to(user.room).emit('updateUserList', users.getUsersByRoom(user.room))
-
-          
+            io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has joined the room`) );
+            io.to(user.room).emit('updateUserList', users.getUsersByRoom(user.room));        
         
             socket.emit('updateAvailableRooms', users.getAllRooms());   
 
@@ -101,33 +95,14 @@ io.on('connection', (socket)=>{
             console.log("user removed", user.id, users );
         }
     });
-
-
-
 });
-
-const deleteRoomifEmpty = (room, allRooms, io)=>{
-    console.log( room.getName() + " room deleted");
-    delete io.sockets.adapter.rooms[room.getName()];
-    allRooms.removeRoom( room.getName() );
-    io.emit('updateAvailableRooms', allRooms.getRoomsNames() );
-}
 
 server.listen(port ,()=>{
     console.log(`Server runing on port ${port}`);
     console.log(`all good`);
 })
 
-module.exports = {
-    io, 
-    app,
-    server,
-    port,
-    users
-}
 
 
-
-//lesson 113 sockets -13.50
 
 

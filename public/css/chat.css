@@ -36,8 +36,6 @@ body{
 }
 
 
-
-
 /*  Odd elements - float left */
 .chat-element:nth-of-type(odd) {
     border: 2px solid #dedede;
