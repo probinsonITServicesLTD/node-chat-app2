@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+
 
 
     <title>Chat</title>
 </head>
 <body>
-    <div class="welcome">
-        <span>Welcome to the chat app</span>
-    </div>
-    <br/>
     <div id="select-avatar" style="text-align-last: center;width:600px">
-        <span style="font-size:1.5em">To begin select an avatar by clicking it!</span><br>
         <div id="avatars-list"></div>
         <span id="avatars-errors"></span>
     </div>
@@ -43,12 +38,19 @@
         </div>
 
     </div>
-    
 
-    <script src="/js/libs/jquery-3.3.1.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/chat.js"></script>
-    <script src="/js/libs/deparam.js"></script>
+    <div id="chatapp"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <script src="js/libs/deparam.js"></script>
+
+
+
+
+
+    <script src="/output/bundle.js"></script>
+
 
 </body>
 </html>

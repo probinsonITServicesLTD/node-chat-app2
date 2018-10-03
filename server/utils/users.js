@@ -3,10 +3,17 @@ class Users{
         this.users = [];
     }
 
+    getAllRooms(){
+        return [...new Set(this.users.map(user => user.room))];
+    }
 
-    addUser(id, name, room){
-        var avatar = "generic";
-        var user = {id, name, room, avatar}
+    getUsersByRoom(room){
+        var roomUsers =  this.users.filter((user) => user.room === room);
+        return roomUsers;
+    }
+
+    addUser(id, name, room, avatar){
+        var user = {id, name, room, avatar};
         this.users.push(user);
         return user;
     }

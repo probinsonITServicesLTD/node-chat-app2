@@ -1,4 +1,4 @@
-moment = require('moment');
+const moment = require('moment');
 
 var generateMessage = (from, text, avatar, socketId)=>{
     if(!avatar){
@@ -8,6 +8,7 @@ var generateMessage = (from, text, avatar, socketId)=>{
         from, 
         text, 
         avatar, 
+        room: '',
         createdAt : new moment().format('DD MMM YYYY hh:mma')
     }
 }

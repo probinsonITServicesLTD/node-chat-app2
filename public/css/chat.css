@@ -27,8 +27,7 @@ body{
 .add-borders{
     border-style: solid;
     border-color:  darkslategray;
-    border-radius: 19px;
-    
+    border-radius: 19px;    
 }
 
 .set-width-padding{
