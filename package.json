@@ -10,7 +10,7 @@
     "build": "webpack",
     "webpack-dev-server":"webpack-dev-server",
     "webpack-watch": "webpack --watch",
-    "webpack-prod": "webpack -p --env production",
+    "webpack-prod": "webpack -p --env production && webpack-dev-server",
     "webpackbuild": "nodemon --exec babel-node server/server.js  --ignore client",
     "build-watch": "concurrently --kill-others \"nodemon --exec babel-node server/server.js\" \"npm run webpack-watch\""
   },
