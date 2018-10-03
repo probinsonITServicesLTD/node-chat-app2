@@ -2,9 +2,7 @@ import React from 'react';
 import Message from './Message';
 
 export default class Messages extends React.Component{
-    
-    message = React.createRef();
-    
+      
     state = {
         messages: [], 
         message:''
