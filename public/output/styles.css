@@ -301,24 +301,75 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
-  background-color: white; }
+  background-color: white;
+  font-size: 1.6rem; }
 
-button {
-  cursor: pointer; }
+.add-borders {
+  border-style: solid;
+  border-color: #1C1C1A;
+  border-radius: 19px;
+  border-width: .2rem; }
 
-button:disabled {
-  cursor: default; }
+.add-bottom-margin {
+  margin-bottom: 1rem; }
+
+.repeatable {
+  background: #3FB5E9;
+  border-radius: 1rem;
+  margin: .4rem;
+  color: white;
+  font-weight: bold; }
+
+.repeatable:hover {
+  background: #07526e; }
+
+.repeatable-title {
+  background-color: #07526e;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-weight: bold; }
+
+.add-padding {
+  padding: .1rem; }
+
+.add-padding-left {
+  padding-left: .5rem; }
+
+.v-center {
+  display: flex;
+  align-items: center; }
+
+.row {
+  display: flex;
+  width: 50%; }
+
+.column {
+  display: flex;
+  -webkit-align-items: center;
+  flex-direction: column; }
+
+.column:nth-of-type(1) {
+  flex: 80%; }
+
+.column:nth-of-type(2) {
+  flex: 20%; }
 
 .header {
-  background-color: #20222b;
-  color: red;
-  margin-bottom: 4.8rem;
-  padding: 3.2rem 0; }
+  background: #1C1C1A;
+  background: -webkit-linear-gradient(left, #1C1C1A, #3A3A38);
+  background: -o-linear-gradient(right, #1C1C1A, #3A3A38);
+  background: -moz-linear-gradient(right, #1C1C1A, #3A3A38);
+  background: linear-gradient(to right, #1C1C1A, #3A3A38);
+  color: orange;
+  margin-bottom: 1rem;
+  padding: 3.2rem 0;
+  width: 100%; }
 
 .header__title {
   font-size: 3.2rem;
-  margin: 0; }
+  margin: 0;
+  padding-left: 5rem; }
 
 .header__subtitle {
   color: #a5afd7;
@@ -326,5 +377,141 @@ button:disabled {
   font-weight: 500;
   margin: 0; }
 
+/* Room Name */
+.room-name {
+  width: 95%;
+  height: 40px;
+  display: table;
+  vertical-align: middle;
+  background: #3FB5E9;
+  border-color: #3FB5E9; }
+
+.room-name span {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 1rem;
+  font-weight: bold;
+  width: 20px;
+  color: white; }
+
 .flex-float-img {
-  display: flex; }
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle; }
+
+.Modal {
+  position: absolute;
+  top: 40px;
+  left: 500px;
+  right: 500px;
+  bottom: 650px;
+  background-color: #07526e;
+  color: white; }
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3FB5E9; }
+
+.margin-bottom {
+  margin-bottom: 3rem; }
+
+textarea, textarea:focus {
+  border: none;
+  outline: 0; }
+
+.user-input-parent {
+  padding: 15px;
+  height: 110px; }
+
+.user-input-parent .user-input {
+  resize: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  height: 100%;
+  margin: -10px; }
+
+.messages-window {
+  height: 400px;
+  max-height: 400px;
+  min-height: 400px;
+  overflow: hidden;
+  overflow-y: auto; }
+
+.messages {
+  width: 95%; }
+
+.message {
+  display: flex;
+  padding: 3rem; }
+
+.chat-text {
+  width: 90%; }
+
+.avatar {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center; }
+
+/*  Odd elements - float left */
+.message:nth-of-type(odd) {
+  border: 2px solid #B0C4DE;
+  background-color: #B0C4DE;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px; }
+
+.message:nth-of-type(odd) .flex-pos:nth-of-type(1) {
+  order: 1; }
+
+.message:nth-of-type(odd) .chat-text {
+  text-align: right;
+  padding-right: 15px;
+  font-weight: normal; }
+
+/*  Even elements  - float right*/
+.message:nth-of-type(even) {
+  border: 2px solid #dedede;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px; }
+
+.message:nth-of-type(even) .chat-text {
+  padding-left: 15px; }
+
+.avatar img {
+  height: 7rem; }
+
+.message-text {
+  word-wrap: break-word;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+/* Other Users */
+.other-users {
+  width: 95%;
+  height: 50%;
+  overflow: hidden;
+  overflow-y: auto; }
+
+/* Other room */
+.other-rooms {
+  width: 95%;
+  height: 50%;
+  width: 95%;
+  height: 50%;
+  overflow: hidden;
+  overflow-y: auto; }
+
+.img-container {
+  width: 35px;
+  max-width: 35px;
+  min-width: 35px; }

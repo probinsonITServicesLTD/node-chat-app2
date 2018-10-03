@@ -3,42 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-
-
+    <link href="output/styles.css" rel="stylesheet">
     <title>Chat</title>
 </head>
 <body>
-    <div id="select-avatar" style="text-align-last: center;width:600px">
-        <div id="avatars-list"></div>
-        <span id="avatars-errors"></span>
-    </div>
-
-    <div id="container" style="display:none">
-        <div>Room name : <span id="room-name"></span></div>
-        <div style="display:inline-block"> 
-            <div class="add-borders set-width-padding">
-                <div id="messages"></div>
-            </div>
-            <br/>
-            <div class="add-borders set-width-padding user-input-parent" >
-                <textarea type="text" class="user-input" id="message" placeholder="Type message and press Enter to send" resize="none"></textarea>
-            </div>     
-        </div> 
- 
-        <div style="float:right">
-            <span>Users</span>
-            <div class="add-borders set-width-padding" style="height:300px">
-                <div id="user-list"></div>
-            </div>
-            <span>Chat Rooms</span>
-            <div class="add-borders set-width-padding" style="height:300px">
-                <div id="rooms-list"></div>
-            </div>        
-        </div>
-
-    </div>
-
     <div id="chatapp"></div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>

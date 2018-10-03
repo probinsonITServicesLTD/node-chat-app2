@@ -14,18 +14,18 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
 
-const webpack =require('webpack');
-const webpackConfig = require('./../webpack.config');
-const compiler = webpack(webpackConfig);
+// const webpack =require('webpack');
+// const webpackConfig = require('./../webpack.config');
+// const compiler = webpack(webpackConfig);
 var users = new Users();
 
-app.use(
-    require('webpack-dev-middleware')(compiler, {
-        noInfo: false,
-        publicPath: webpackConfig.output.publicPath
-    })
-);
-app.use(require('webpack-hot-middleware')(compiler));
+// app.use(
+//     require('webpack-dev-middleware')(compiler, {
+//         noInfo: false,
+//         publicPath: webpackConfig.output.publicPath
+//     })
+// );
+// app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(express.static(publicPath));
 
