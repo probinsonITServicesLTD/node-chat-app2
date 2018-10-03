@@ -2,7 +2,7 @@ import React from 'react';
 import Message from './Message';
 
 export default class Messages extends React.Component{
-      
+
     state = {
         messages: [], 
         message:''
@@ -25,7 +25,6 @@ export default class Messages extends React.Component{
             }
             this.props.socket.emit('createMessage', message, (res)=>{
                 if(res){
-                    //message was processed
                     this.setState({
                         message : ''
                     });
@@ -70,7 +69,6 @@ export default class Messages extends React.Component{
                     <textarea 
                         type="text" 
                         className="user-input" 
-                        id="message" 
                         placeholder="Type message and press Enter to send" 
                         resize="none"
                         onKeyDown={this.handleKeyPress}
