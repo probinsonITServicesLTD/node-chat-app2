@@ -1,0 +1,37 @@
+.margin-bottom{
+    margin-bottom:$margin-spacing;
+}
+
+textarea, textarea:focus{
+    border: none;
+    outline: 0;
+}
+
+.user-input-parent{
+    padding: 15px;
+    height:110px;
+}
+
+.user-input-parent .user-input{
+    resize: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 100%;
+    margin: -10px;
+}
+
+.messages-window{
+    height:$height;
+    max-height:$height;
+    min-height:$height;
+    overflow: hidden;
+    overflow-y: auto;
+    
+}
+
+
+.messages{
+    width: $width;
+}

@@ -1,0 +1,27 @@
+.header{
+    background: $mat-black;
+    background: -webkit-linear-gradient(left, $mat-black, $lighter-mat-black);
+    background: -o-linear-gradient(right, $mat-black, $lighter-mat-black);
+    background: -moz-linear-gradient(right, $mat-black,$lighter-mat-black);
+    background: linear-gradient(to right, $mat-black, $lighter-mat-black);
+    color: orange;
+    margin-bottom: 1rem;;
+    padding:$l-size 0;
+    width:100%;
+}
+
+.header__title{
+    font-size:$l-size;
+    margin:0;
+    padding-left:5rem;
+}
+
+.header__subtitle{
+    color: $off-white;
+    font-size: $m-size;
+    font-weight:500;
+    margin:0;
+}
+
+
+

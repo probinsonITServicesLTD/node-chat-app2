@@ -1,0 +1,20 @@
+
+
+.Modal {
+    position: absolute;
+    top: 40px;
+    left: 500px;
+    right: 500px;
+    bottom: 650px;
+    background-color: $emsoke-dark-blue;
+    color: white;
+  }
+
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $emsoke-light-blue;
+  }

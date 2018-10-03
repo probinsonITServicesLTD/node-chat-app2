@@ -1,0 +1,61 @@
+.message{
+    display:flex;
+    padding:3rem;    
+}
+
+
+.chat-text{
+    width:90%;
+}
+
+.avatar{
+    width:10%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+}
+
+/*  Odd elements - float left */
+.message:nth-of-type(odd) {
+    border: 2px solid #B0C4DE;
+    background-color: #B0C4DE;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.message:nth-of-type(odd) .flex-pos:nth-of-type(1){
+    order: 1;
+}
+
+
+.message:nth-of-type(odd) .chat-text{
+    text-align: right;
+    padding-right:15px;
+    font-weight: normal;
+}
+
+/*  Even elements  - float right*/
+.message:nth-of-type(even) {
+    border: 2px solid #dedede;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.message:nth-of-type(even) .chat-text{
+    padding-left:15px;
+}
+
+.avatar img{
+    height:7rem;
+}
+
+.message-text{
+    word-wrap: break-word;
+    padding-left:3rem;
+    padding-right:3rem;
+}
+

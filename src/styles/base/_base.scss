@@ -1,0 +1,57 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: white;
+    font-size:$m-size;
+
+}
+
+.add-borders{
+    border-style: solid;
+    border-color:  $border-colour;
+    border-radius: 19px;  
+    border-width:.2rem;  
+}
+
+.add-bottom-margin{
+    margin-bottom:1rem;
+}
+
+.repeatable{
+    background: $emsoke-light-blue;
+    border-radius: 1rem; 
+    margin:.4rem;
+    color:white;
+    font-weight:bold;
+}
+
+.repeatable:hover{
+    background:$emsoke-dark-blue;
+}
+
+.repeatable-title{
+    background-color: $emsoke-dark-blue;
+    color:white;
+    text-align: center;
+    width:100%;
+    font-weight:bold;
+}
+
+.add-padding{
+    padding:.1rem; 
+}
+
+.add-padding-left{
+    padding-left:.5rem;
+}
+
+.v-center{
+    display: flex;
+    align-items: center;
+}
+
+
+

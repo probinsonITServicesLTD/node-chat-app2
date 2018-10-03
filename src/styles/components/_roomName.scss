@@ -1,0 +1,18 @@
+/* Room Name */
+.room-name{
+    width: $width;
+    height:40px;
+    display:table;
+    vertical-align:middle;
+    background: $emsoke-light-blue;
+    border-color:  $emsoke-light-blue;
+}
+
+.room-name span{
+    display:table-cell;
+    vertical-align:middle;
+    padding-left:1rem;
+    font-weight:bold;
+    width:20px;
+    color:white;
+}
